@@ -1,0 +1,22 @@
+Variables in programming are the same as variables in math
+Only instead of limiting you to numbers, variables can be any type
+=====
+This can include numbers like these
+
+my_first_variable = 42
+pi = 3.14
+bank_balance = -80.00
+=====
+Variables can also be strings, for example
+
+the_question = "To be or not to be"
+space = "The final frontier"
+empty_string = ""
+=====
+Variables can be a boolean, this means they have only two possible states
+True or False
+
+are_you_reading_this = True
+are_you_the_president = False
+=====
+More variables news coming soon!
