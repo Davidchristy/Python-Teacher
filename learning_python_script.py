@@ -44,7 +44,7 @@ def main_menu(added_prompt = ""):
 
     temp_answer = menu_helper(main_menu_text, 6)
     
-    #What? No Case switch in python? oh well, time to go old style
+    #What? No Case switch in python? oh well, time to go old school
     if temp_answer == 1:
         variables_main()
     if temp_answer == 2:
