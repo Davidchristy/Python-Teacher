@@ -1,5 +1,5 @@
 '''
-Programmer: David
+Programmers: David and Josh
 Program: This is a script to teach you the basics of python programming
 Dependency: Python 3.x
 '''
@@ -17,7 +17,7 @@ def menu_helper(menu_string, num_of_options):
     while temp_answer > num_of_options or temp_answer < 1:
         #clear the terminal screen
         os.system('cls' if os.name == 'nt' else 'clear')
-        
+
         print(menu_string)
         temp_answer = get_input.get_input()
 
@@ -28,35 +28,37 @@ def menu_helper(menu_string, num_of_options):
             temp_answer = int(temp_answer)
         else:
             temp_answer = 0
-    
+
     return temp_answer
-    
+
 def main_menu(added_prompt = ""):
-    main_menu_text = added_prompt
-    main_menu_text += "Welcome " + user_name + ", to the main menu please select the option"
-    main_menu_text += " you want to learn more about.\n\n"
-    main_menu_text += "[1] variables\n"
-    main_menu_text += "[2] Printing Text\n"
-    main_menu_text += "[3] Arithmetic\n"
-    main_menu_text += "[4] Boolean Logic\n"
-    main_menu_text += "[5] Game Making\n"
-    main_menu_text += "[6] Exit\n"
+    if added_prompt:
+        added_prompt += '\n'
+    main_menu_text = """
+
+    {}Welcome, {}, to the main menu. Please select the option
+    you would like to learn more about.
+    [1] Variables
+    [2] Printing Text
+    [3] Arithmetic
+    [4] Boolean Logic
+    [5] Game Making
+    [6] Exit
+    """.format(added_prompt, user_name)
 
     temp_answer = menu_helper(main_menu_text, 6)
-    
-    #What? No Case switch in python? oh well, time to go old school
-    if temp_answer == 1:
-        variables_main()
-    if temp_answer == 2:
-        printing_text_main()
-    if temp_answer == 3:
-        arithmetic_main()
-    if temp_answer == 4:
-        boolean_logic+main()
-    if temp_answer == 5:
-        game_making_main()
-    if temp_answer == 6:
-        exit()
+
+    # Who needs switch statements? Functions are first-class members!
+    options = [
+            variables_main,
+            printing_text_main,
+            arithmetic_main,
+            boolean_logic_main,
+            game_making_main,
+            exit
+            ]
+
+    options[temp_answer - 1]()
 
 def variables_main(added_prompt = ""):
     varible_main_text = added_prompt + "\n"
@@ -82,16 +84,16 @@ def variables_main(added_prompt = ""):
 def variables_intro():
     print("")
 
-def printing_text():
+def printing_text_main():
     print("printing_text")
 
-def arithmetic():
+def arithmetic_main():
     print("arithmetic")
 
-def boolean_logic():
+def boolean_logic_main():
     print("boolean_logic")
 
-def game_making():
+def game_making_main():
     print("game_making")
 
 def exit():
@@ -106,9 +108,9 @@ def main():
     print(prompt)
 
     #asking for the name of the user
-    global user_name  
+    global user_name
     user_name = input("What is your name?\n")
-    
+
     prompt = "Hello " + user_name + ", Is this the first time you've been here? [y]/n"
     temp_question = get_input.get_input(prompt)
 
