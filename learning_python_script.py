@@ -8,6 +8,7 @@ import os
 import sys
 from get_input import get_input
 import slideShow
+import guide
 
 user_name = ""
 
@@ -73,7 +74,8 @@ def variables_main(added_prompt = ""):
         slideShow.SlideShow("./variables/info.txt")
         variables_main()
     if temp_answer == 2:
-        variables_guides()
+        guide.Guide("./variables/guide.txt")
+        variables_main()
     if temp_answer == 3:
         variables_test()
     if temp_answer == 4:

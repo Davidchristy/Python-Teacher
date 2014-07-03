@@ -1,31 +1,33 @@
 =====Question=====
 What is an example of a integer variable?
+my_int = _______
 =====Answer=====
-temp_answer.isdigit() or (temp_answer[0] == '-' and len(temp_answer) > 0 and temp_answer[1:].isdigit())
-=====Hint=====
-#checking for string
-if "\"" in temp_answer:
-    #Might not have print here...
-    output += "Remember integers don't have quotations marks"
-
-=====Hint=====
-if "." in temp_answer:
-    print("Remember integers don't have decimals")
-
-=====Hint=====
-if not temp_answer.isdigit():
-    print("Remember intergers are whole numbers")
-
-=====Hint=====
-#add more hints here if needed?
-=====End_Question=====
+is_int
+=====is_str=====
+Remember integers don't have quotations marks
+=====is_float=====
+Remember integers don't have decimals
+=====General=====
+Intergers are whole number variables.
+=====Question=====
+What is an example of a String variable?
+my_string = _______
+=====Answer=====
+is_str
+=====General=====
+Remember strings are surounded by quotation marks
+=====Question=====
+What is an example of a float variable?
+my_float = _____
+=====Answer=====
+is_float
+=====General=====
+Remember floats have decimal points
 =====Question=====
 Which of the follow is correct syntax?
 [1] number = 42
 [2] number == 42
 =====Answer=====
-temp_answer == "1"
-=====Hint=====
-if not temp_answer == 1:
-    print("Remember assignment operators only have one equal sign")
-=====End_Question=====
+1
+=====2=====
+Remember to assign a variable is only one (1) equal signs
