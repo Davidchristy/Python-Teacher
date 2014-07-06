@@ -13,8 +13,8 @@ I really need better names...but it works!
 
 import os
 import sys
-import termios
 import contextlib
+
 
 class get_input(object):
     """
@@ -25,7 +25,13 @@ class get_input(object):
     @classmethod        
     def get_input(self, prompt = ""):
         print(prompt)
-        #As of now this only works with Unix computer, I'll get windows working soon
+        try:
+            import termios
+        except ImportError:
+            #This makes it work for windows as well
+            import msvcrt
+            return msvcrt.getch().decode("utf-8")
+
         with raw_mode(sys.stdin):
             try:
                 while True:

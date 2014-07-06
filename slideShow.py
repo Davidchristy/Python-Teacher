@@ -4,8 +4,6 @@ A small class to make a slide show of infomation
 import os
 import sys
 #needed for instant input
-import termios
-import contextlib
 from get_input import get_input
 
 
